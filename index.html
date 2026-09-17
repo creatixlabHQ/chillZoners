@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CHILL ZONERS - Member Registration</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <h1>CHILL ZONERS</h1>
+      <p class="subtitle">Member Registration</p>
+
+      <form id="memberForm">
+
+        <input
+          type="text"
+          id="name"
+          placeholder="Full Name"
+          required
+        >
+
+        <input
+          type="tel"
+          id="phone"
+          placeholder="Phone Number"
+          maxlength="10"
+          required
+        >
+
+        <input
+          type="email"
+          id="email"
+          placeholder="Email Address"
+          required
+        >
+
+        <textarea
+          id="address"
+          placeholder="Full Address"
+          required
+        ></textarea>
+
+        <input
+          type="text"
+          id="city"
+          placeholder="City"
+          required
+        >
+
+        <input
+          type="text"
+          id="state"
+          placeholder="State"
+          required
+        >
+
+        <input
+          type="text"
+          id="pincode"
+          placeholder="Pincode"
+          maxlength="6"
+          required
+        >
+
+        <button type="submit" id="submitBtn">
+          Register Member
+        </button>
+
+      </form>
+
+      <p id="message"></p>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+  </html>
