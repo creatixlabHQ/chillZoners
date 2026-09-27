@@ -4,9 +4,185 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>CHILL ZONERS - Member Registration</title>
+  <title>CHILL ZONERS | Security Alert</title>
 
-  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, #3b1010 0%, #0b0d12 45%, #050608 100%);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      background: rgba(15, 17, 23, 0.96);
+      border: 1px solid #5b2020;
+      border-radius: 24px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.65);
+    }
+
+    .top-line {
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: #ef4444;
+    }
+
+    .warning-icon {
+      width: 82px;
+      height: 82px;
+      margin: 10px auto 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      background: rgba(239, 68, 68, 0.12);
+      border: 2px solid #ef4444;
+      box-shadow: 0 0 30px rgba(239, 68, 68, 0.25);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
+      }
+
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 35px rgba(239, 68, 68, 0.45);
+      }
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 14px;
+      border-radius: 30px;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      color: #f87171;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 7px;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      color: #9ca3af;
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+
+    .alert-box {
+      text-align: left;
+      padding: 18px;
+      border-radius: 15px;
+      background: #1a1012;
+      border: 1px solid #4a2024;
+      margin-bottom: 18px;
+    }
+
+    .alert-title {
+      color: #f87171;
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .alert-text {
+      color: #d1d5db;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .rules {
+      text-align: left;
+      margin-top: 18px;
+    }
+
+    .rule {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid #20242d;
+      color: #d1d5db;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .rule:last-child {
+      border-bottom: none;
+    }
+
+    .cross {
+      color: #ef4444;
+      font-weight: bold;
+      font-size: 17px;
+    }
+
+    .status {
+      margin-top: 22px;
+      padding: 14px;
+      border-radius: 13px;
+      background: #0c1711;
+      border: 1px solid #1f5b31;
+      color: #4ade80;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .status-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      margin-right: 7px;
+      box-shadow: 0 0 10px #22c55e;
+    }
+
+    .footer {
+      margin-top: 22px;
+      color: #6b7280;
+      font-size: 12px;
+    }
+
+    .owner {
+      margin-top: 8px;
+      color: #9ca3af;
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
@@ -15,74 +191,92 @@
 
     <div class="card">
 
+      <div class="top-line"></div>
+
+      <div class="warning-icon">
+        ⚠️
+      </div>
+
+      <div class="badge">
+        SECURITY WARNING
+      </div>
+
       <h1>CHILL ZONERS</h1>
-      <p class="subtitle">Member Registration</p>
 
-      <form id="memberForm">
+      <p class="subtitle">
+        Automated Ban & Spam Protection System
+      </p>
 
-        <input
-          type="text"
-          id="name"
-          placeholder="Full Name"
-          required
-        >
+      <div class="alert-box">
 
-        <input
-          type="tel"
-          id="phone"
-          placeholder="Phone Number"
-          maxlength="10"
-          required
-        >
+        <div class="alert-title">
+          ⚠️ Important Warning
+        </div>
 
-        <input
-          type="email"
-          id="email"
-          placeholder="Email Address"
-          required
-        >
+        <div class="alert-text">
+          GC ki security ko ab automated
+          <strong>Ban & Spam Protection System</strong>
+          se monitor kiya ja raha hai.
+          <br><br>
+          Spam, repeated unwanted messages ya
+          jaan-bujhkar GC ko disturb karne wali activity
+          detect hone par system
+          <strong>automatic action</strong> le sakta hai.
+        </div>
 
-        <textarea
-          id="address"
-          placeholder="Full Address"
-          required
-        ></textarea>
+      </div>
 
-        <input
-          type="text"
-          id="city"
-          placeholder="City"
-          required
-        >
+      <div class="rules">
 
-        <input
-          type="text"
-          id="state"
-          placeholder="State"
-          required
-        >
+        <div class="rule">
+          <span class="cross">✕</span>
+          <span>Repeated spam messages mat bhejein.</span>
+        </div>
 
-        <input
-          type="text"
-          id="pincode"
-          placeholder="Pincode"
-          maxlength="6"
-          required
-        >
+        <div class="rule">
+          <span class="cross">✕</span>
+          <span>GC ko unnecessarily disturb mat karein.</span>
+        </div>
 
-        <button type="submit" id="submitBtn">
-          Register Member
-        </button>
+        <div class="rule">
+          <span class="cross">✕</span>
+          <span>Same message ko baar-baar send na karein.</span>
+        </div>
 
-      </form>
+        <div class="rule">
+          <span class="cross">✕</span>
+          <span>Security system ko bypass karne ki koshish na karein.</span>
+        </div>
 
-      <p id="message"></p>
+      </div>
+
+      <div class="status" id="status">
+        <span class="status-dot"></span>
+        SECURITY SYSTEM ACTIVE
+      </div>
+
+      <div class="footer">
+        Please follow GC rules and keep CHILL ZONERS clean & comfortable.
+        <div class="owner">
+          — CHILL ZONERS OWNER
+        </div>
+      </div>
 
     </div>
 
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    const status = document.getElementById("status");
+
+    setInterval(() => {
+      status.style.opacity = "0.65";
+
+      setTimeout(() => {
+        status.style.opacity = "1";
+      }, 250);
+    }, 2500);
+  </script>
 
 </body>
-  </html>
+</html>
