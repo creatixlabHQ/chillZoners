@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>I Love You ❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      background:
+        radial-gradient(circle at 50% 20%, #ff8fbd 0%, transparent 30%),
+        linear-gradient(135deg, #170018, #4b073f, #160018);
+
+      color: white;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -40px;
+      pointer-events: none;
+      animation: floatUp linear forwards;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(0.7);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translateY(-110vh) rotate(360deg) scale(1.4);
+        opacity: 0;
+      }
+    }
+
+    /* Card */
+    .card {
+      width: min(92%, 440px);
+      padding: 35px 25px;
+      text-align: center;
+
+      border-radius: 30px;
+
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+
+      backdrop-filter: blur(18px);
+
+      box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.45),
+        inset 0 0 30px rgba(255, 255, 255, 0.04);
+
+      z-index: 10;
+
+      animation: appear 1s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: scale(0.75) translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .top-heart {
+      font-size: 65px;
+      animation: beat 1.3s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.18);
+      }
+    }
+
+    .hello {
+      margin-top: 10px;
+      font-size: 20px;
+      color: #ffe4f1;
+    }
+
+    /* Main love text */
+    .love {
+      margin: 12px 0;
+
+      font-size: clamp(42px, 12vw, 65px);
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      background: linear-gradient(
+        90deg,
+        #ffb0d2,
+        #ffffff,
+        #ff4f9a
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      animation: loveGlow 2s infinite alternate;
+    }
+
+    @keyframes loveGlow {
+      from {
+        filter: drop-shadow(0 0 5px #ff4f9a);
+      }
+
+      to {
+        filter: drop-shadow(0 0 22px #ff4f9a);
+      }
+    }
+
+    .message {
+      color: #ffe6f1;
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 15px 0 22px;
+    }
+
+    .question {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      border: none;
+      padding: 13px 28px;
+      border-radius: 50px;
+
+      font-size: 16px;
+      font-weight: bold;
+
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    #yesBtn {
+      color: white;
+      background: linear-gradient(135deg, #ff4f9a, #ff126d);
+
+      box-shadow:
+        0 8px 25px rgba(255, 18, 109, 0.45);
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.08);
+    }
+
+    #maybeBtn {
+      color: white;
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    #maybeBtn:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #ffd4e6;
+    }
+
+    /* Success */
+    #success {
+      display: none;
+    }
+
+    .success-heart {
+      font-size: 90px;
+      animation: beat 1s infinite;
+    }
+
+    .success-title {
+      font-size: 42px;
+      margin: 10px 0;
+    }
+
+    .success-text {
+      color: #ffe6f1;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Proposal Card -->
+  <div class="card" id="proposal">
+
+    <div class="top-heart">💗</div>
+
+    <div class="hello">
+      Hey <span id="crushName">My Love</span>...
+    </div>
+
+    <!-- THIS IS THE MAIN PROPOSAL -->
+    <div class="love">
+      I LOVE YOU ❤️
+    </div>
+
+    <p class="message">
+      Bahut kuch kehna tha,
+      lekin kuch feelings words se zyada
+      dil se feel hoti hain. 🥺
+      <br><br>
+      Isliye aaj seedha keh raha hoon...
+    </p>
+
+    <div class="question">
+      Will you be with me? 💕
+    </div>
+
+    <div class="buttons">
+
+      <button id="yesBtn">
+        Yes 💖
+      </button>
+
+      <button id="maybeBtn">
+        Maybe 🌸
+      </button>
+
+    </div>
+
+    <div class="note">
+      Take your time. No pressure. ❤️
+    </div>
+
+  </div>
+
+
+  <!-- Success Card -->
+  <div class="card" id="success">
+
+    <div class="success-heart">
+      💖
+    </div>
+
+    <div class="success-title">
+      YAY! 🥹❤️
+    </div>
+
+    <p class="success-text">
+      I think this is officially
+      my favourite little moment. ✨
+      <br><br>
+      Thank you for making my day special. 💕
+    </p>
+
+  </div>
+
+
+  <script>
+
+    // ==============================
+    // CHANGE CRUSH NAME HERE
+    // ==============================
+
+    const crushName = "Your Crush";
+
+    document.getElementById("crushName").textContent = crushName;
+
+
+    // ==============================
+    // FLOATING HEARTS
+    // ==============================
+
+    const heartList = [
+      "❤️",
+      "💗",
+      "💖",
+      "💕",
+      "💘",
+      "✨"
+    ];
+
+    function createHeart() {
+
+      const heart = document.createElement("div");
+
+      heart.className = "heart";
+
+      heart.textContent =
+        heartList[Math.floor(Math.random() * heartList.length)];
+
+      heart.style.left =
+        Math.random() * 100 + "vw";
+
+      heart.style.fontSize =
+        (15 + Math.random() * 25) + "px";
+
+      heart.style.animationDuration =
+        (4 + Math.random() * 5) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 9000);
+    }
+
+    setInterval(createHeart, 450);
+
+
+    // ==============================
+    // YES BUTTON
+    // ==============================
+
+    document
+      .getElementById("yesBtn")
+      .addEventListener("click", () => {
+
+        document.getElementById("proposal").style.display = "none";
+
+        document.getElementById("success").style.display = "block";
+
+        celebrate();
+      });
+
+
+    // ==============================
+    // MAYBE BUTTON
+    // ==============================
+
+    document
+      .getElementById("maybeBtn")
+      .addEventListener("click", () => {
+
+        const button =
+          document.getElementById("maybeBtn");
+
+        button.textContent =
+          "Take your time 🌸";
+
+      });
+
+
+    // ==============================
+    // CELEBRATION
+    // ==============================
+
+    function celebrate() {
+
+      const items = [
+        "❤️",
+        "💖",
+        "💕",
+        "💗",
+        "✨",
+        "🌸",
+        "🎉"
+      ];
+
+      for (let i = 0; i < 60; i++) {
+
+        const item =
+          document.createElement("div");
+
+        item.className = "heart";
+
+        item.textContent =
+          items[Math.floor(Math.random() * items.length)];
+
+        item.style.left =
+          Math.random() * 100 + "vw";
+
+        item.style.bottom = "100vh";
+
+        item.style.fontSize =
+          (16 + Math.random() * 25) + "px";
+
+        item.style.animationDuration =
+          (2 + Math.random() * 3) + "s";
+
+        document.body.appendChild(item);
+
+        setTimeout(() => {
+          item.remove();
+        }, 5000);
+      }
+    }
+
+  </script>
+
+</body>
+  </html>
